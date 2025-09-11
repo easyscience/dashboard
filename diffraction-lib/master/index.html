@@ -6,30 +6,31 @@
   <title>Dashboard</title>
   <style>
     body {
+      --base-size: clamp(18px, 1.25vw, 22px);
       font-family: nunito, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
       background-color: #262626;
       color: inherit;
       color-scheme: light dark;
+      font-size: var(--base-size);
     }
     .card-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(20em, 1fr));
       gap: 0;
       padding: 0;
       background-color: transparent;
       justify-content: start;
     }
     .card {
-      border-radius: 6px;
+      border-radius: 0.3em;
       overflow: hidden;
       border: 1px solid #111;
       background-color: transparent;
-      margin: 0.5rem;
+      margin: 0.5em;
       display: flex;
       flex-direction: column;
     }
     .label {
-      font-size: 1rem;
       font-weight: 300;
       color: #ccc;
       display: flex;
@@ -39,18 +40,20 @@
       overflow: hidden;
       text-overflow: ellipsis;
       background-color: #202020;
-      padding: 0.5rem 0.75rem;
+      padding: 0.7em .7em;
       border-radius: 0;
       margin: 0;
+      font-size: 1em;
     }
     .values {
       display: flex;
       flex-direction: column;
       font-weight: 300;
-      gap: 0.5rem;
-      padding: 0.5rem 0.75rem;
+      gap: 0.5em;
+      padding: 0.7em 0.7em;
       background-color: #1a1a1a;
       border-top: 1px solid #101010;
+      font-size: 1em;
     }
     .green {
       color: #6eb543;
@@ -73,6 +76,31 @@
 <body>
 
 <div class="card-grid">
+  <!-- Group: Tests -->
+  <div class="card">
+    <div class="label"><i class="fas fa-vial"></i>Test code and package</div>
+    <div class="values">
+      <span class="green">master: passed</span>
+      <span class="green">develop: passed</span>
+      <span class="red">code-complexity: failed</span>
+    </div>
+  </div>
+  <div class="card">
+    <div class="label"><i class="fas fa-vial"></i>Test tutorials</div>
+    <div class="values">
+      <span class="green">master: passed</span>
+      <span class="green">develop: passed</span>
+      <span class="gray">code-complexity: no status yet</span>
+    </div>
+  </div>
+  <div class="card">
+    <div class="label"><i class="fas fa-vial"></i>Test unpinned PyPI package</div>
+    <div class="values">
+      <span class="green">master: passed</span>
+      <span class="gray">develop: -</span>
+      <span class="gray">code-complexity: -</span>
+    </div>
+  </div>
   <!-- Group: Code Quality -->
   <div class="card">
     <div class="label"><i class="fas fa-gauge"></i>Code quality from CodeFactor.io</div>
@@ -138,31 +166,6 @@
       <span class="red">master: 35%</span>
       <span class="red">develop: 35%</span>
       <span class="red">code-complexity: 35%</span>
-    </div>
-  </div>
-  <!-- Group: Tests -->
-  <div class="card">
-    <div class="label"><i class="fas fa-vial"></i>Test code and package</div>
-    <div class="values">
-      <span class="green">master: passed</span>
-      <span class="green">develop: passed</span>
-      <span class="red">code-complexity: failed</span>
-    </div>
-  </div>
-  <div class="card">
-    <div class="label"><i class="fas fa-vial"></i>Test tutorials</div>
-    <div class="values">
-      <span class="green">master: passed</span>
-      <span class="green">develop: passed</span>
-      <span class="gray">code-complexity: no status yet</span>
-    </div>
-  </div>
-  <div class="card">
-    <div class="label"><i class="fas fa-vial"></i>Test unpinned PyPI package</div>
-    <div class="values">
-      <span class="green">master: passed</span>
-      <span class="gray">develop: -</span>
-      <span class="gray">code-complexity: -</span>
     </div>
   </div>
   <!-- Group: Security -->
