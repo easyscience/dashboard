@@ -1,38 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard</title>
+  <style>
+    body {
+      font-family: nunito, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+      background-color: #262626;
+      color: inherit;
+      color-scheme: light dark;
+    }
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 0;
+      padding: 0;
+      background-color: transparent;
+      justify-content: start;
+    }
+    .card {
+      border-radius: 6px;
+      overflow: hidden;
+      border: 1px solid #111;
+      background-color: transparent;
+      margin: 0.5rem;
+      display: flex;
+      flex-direction: column;
+    }
+    .label {
+      font-size: 1rem;
+      font-weight: 300;
+      color: #ccc;
+      display: flex;
+      align-items: center;
+      gap: 0.5em;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      background-color: #202020;
+      padding: 0.5rem 0.75rem;
+      border-radius: 0;
+      margin: 0;
+    }
+    .values {
+      display: flex;
+      flex-direction: column;
+      font-weight: 300;
+      gap: 0.5rem;
+      padding: 0.5rem 0.75rem;
+      background-color: #1a1a1a;
+      border-top: 1px solid #101010;
+    }
+    .green {
+      color: #6eb543;
+    }
+    .yellow {
+      color: #e8b745;
+    }
+    .red {
+      color: #e46259;
+    }
+    .blue {
+      color: #71b2f0;
+    }
+    .gray {
+      color: #757575;
+    }
+  </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
 
-<svg width="360" height="400" viewBox="0 0 360 400" xmlns="http://www.w3.org/2000/svg">
-  <!-- Row 1 -->
-  <rect x="0"   y="0"   width="120" height="80" fill="#e74c3c"/>
-  <rect x="120" y="0"   width="120" height="80" fill="#27ae60"/>
-  <rect x="240" y="0"   width="120" height="80" fill="#2980b9"/>
-  <text x="60"   y="45" text-anchor="middle" alignment-baseline="middle" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#fff">Cell 1</text>
-  <text x="180"  y="45" text-anchor="middle" alignment-baseline="middle" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#fff">Cell 2</text>
-  <text x="300"  y="45" text-anchor="middle" alignment-baseline="middle" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#fff">Cell 3</text>
-  <!-- Row 2 -->
-  <rect x="0"   y="80"  width="120" height="80" fill="#e67e22"/>
-  <rect x="120" y="80"  width="120" height="80" fill="#8e44ad"/>
-  <rect x="240" y="80"  width="120" height="80" fill="#e74c3c"/>
-  <text x="60"   y="125" text-anchor="middle" alignment-baseline="middle" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#fff">Cell 4</text>
-  <text x="180"  y="125" text-anchor="middle" alignment-baseline="middle" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#fff">Cell 5</text>
-  <text x="300"  y="125" text-anchor="middle" alignment-baseline="middle" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#fff">Cell 6</text>
-  <!-- Row 3 -->
-  <rect x="0"   y="160" width="120" height="80" fill="#27ae60"/>
-  <rect x="120" y="160" width="120" height="80" fill="#2980b9"/>
-  <rect x="240" y="160" width="120" height="80" fill="#e67e22"/>
-  <text x="60"   y="205" text-anchor="middle" alignment-baseline="middle" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#fff">Cell 7</text>
-  <text x="180"  y="205" text-anchor="middle" alignment-baseline="middle" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#fff">Cell 8</text>
-  <text x="300"  y="205" text-anchor="middle" alignment-baseline="middle" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#fff">Cell 9</text>
-  <!-- Row 4 -->
-  <rect x="0"   y="240" width="120" height="80" fill="#8e44ad"/>
-  <rect x="120" y="240" width="120" height="80" fill="#e74c3c"/>
-  <rect x="240" y="240" width="120" height="80" fill="#27ae60"/>
-  <text x="60"   y="285" text-anchor="middle" alignment-baseline="middle" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#fff">Cell 10</text>
-  <text x="180"  y="285" text-anchor="middle" alignment-baseline="middle" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#fff">Cell 11</text>
-  <text x="300"  y="285" text-anchor="middle" alignment-baseline="middle" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#fff">Cell 12</text>
-  <!-- Row 5 -->
-  <rect x="0"   y="320" width="120" height="80" fill="#2980b9"/>
-  <rect x="120" y="320" width="120" height="80" fill="#e67e22"/>
-  <rect x="240" y="320" width="120" height="80" fill="#8e44ad"/>
-  <text x="60"   y="365" text-anchor="middle" alignment-baseline="middle" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#fff">Cell 13</text>
-  <text x="180"  y="365" text-anchor="middle" alignment-baseline="middle" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#fff">Cell 14</text>
-  <text x="300"  y="365" text-anchor="middle" alignment-baseline="middle" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#fff">Cell 15</text>
-</svg>
+<div class="card-grid">
+  <!-- Group: Code Quality -->
+  <div class="card">
+    <div class="label"><i class="fas fa-gauge"></i>Code quality from CodeFactor.io</div>
+    <div class="values">
+      <span class="green">master: A</span>
+      <span class="green">develop: A</span>
+      <span class="green">code-complexity: A</span>
+    </div>
+  </div>
+  <div class="card">
+    <div class="label"><i class="fas fa-gauge"></i>Maintainability index with radon</div>
+    <div class="values">
+      <span class="green">master: B (79)</span>
+      <span class="green">develop: B (79)</span>
+      <span class="green">code-complexity: B (79)</span>
+    </div>
+  </div>
+  <div class="card">
+    <div class="label"><i class="fas fa-gauge"></i>Cyclomatic complexity with radon</div>
+    <div class="values">
+      <span class="green">master: A (2.2)</span>
+      <span class="green">develop: A (2.2)</span>
+      <span class="green">code-complexity: A (2.2)</span>
+    </div>
+  </div>
+  <!-- Group: Size -->
+  <div class="card">
+    <div class="label"><i class="fas fa-file-code"></i>Lines of code</div>
+    <div class="values">
+      <span class="blue">master: 1,200</span>
+      <span class="blue">develop: 1,250</span>
+      <span class="blue">code-complexity: 1,300</span>
+    </div>
+  </div>
+  <div class="card">
+    <div class="label"><i class="fas fa-file-code"></i>Number of files</div>
+    <div class="values">
+      <span class="blue">master: 45</span>
+      <span class="blue">develop: 47</span>
+      <span class="blue">code-complexity: 50</span>
+    </div>
+  </div>
+  <div class="card">
+    <div class="label"><i class="fas fa-file-code"></i>Number of functions</div>
+    <div class="values">
+      <span class="blue">master: 519</span>
+      <span class="blue">develop: 519</span>
+      <span class="blue">code-complexity: 517</span>
+    </div>
+  </div>
+  <!-- Group: Coverage -->
+  <div class="card">
+    <div class="label"><i class="fas fa-square-poll-vertical"></i>Unit test coverage from Codecov.io</div>
+    <div class="values">
+      <span class="green">master: 100%</span>
+      <span class="yellow">develop: 65%</span>
+      <span class="red">code-complexity: 40%</span>
+    </div>
+  </div>
+  <div class="card">
+    <div class="label"><i class="fas fa-square-poll-vertical"></i>Docstring coverage with interrogate</div>
+    <div class="values">
+      <span class="red">master: 35%</span>
+      <span class="red">develop: 35%</span>
+      <span class="red">code-complexity: 35%</span>
+    </div>
+  </div>
+  <!-- Group: Tests -->
+  <div class="card">
+    <div class="label"><i class="fas fa-vial"></i>Test code and package</div>
+    <div class="values">
+      <span class="green">master: passed</span>
+      <span class="green">develop: passed</span>
+      <span class="red">code-complexity: failed</span>
+    </div>
+  </div>
+  <div class="card">
+    <div class="label"><i class="fas fa-vial"></i>Test tutorials</div>
+    <div class="values">
+      <span class="green">master: passed</span>
+      <span class="green">develop: passed</span>
+      <span class="gray">code-complexity: no status yet</span>
+    </div>
+  </div>
+  <div class="card">
+    <div class="label"><i class="fas fa-vial"></i>Test unpinned PyPI package</div>
+    <div class="values">
+      <span class="green">master: passed</span>
+      <span class="gray">develop: -</span>
+      <span class="gray">code-complexity: -</span>
+    </div>
+  </div>
+  <!-- Group: Security -->
+  <div class="card">
+    <div class="label"><i class="fas fa-lock"></i>Scan security</div>
+    <div class="values">
+      <span class="green">master: passed</span>
+      <span class="green">develop: passed</span>
+      <span class="green">code-complexity: passed</span>
+    </div>
+  </div>
+  <!-- Group: Build & Release -->
+  <div class="card">
+    <div class="label"><i class="fas fa-rocket"></i>Build and deploy docs</div>
+    <div class="values">
+      <span class="green">master: passed</span>
+      <span class="green">develop: passed</span>
+      <span class="gray">code-complexity: no status yet</span>
+    </div>
+  </div>
+  <div class="card">
+    <div class="label"><i class="fas fa-rocket"></i>Publish to PyPI</div>
+    <div class="values">
+      <span class="green">master: passed</span>
+      <span class="gray">develop: -</span>
+      <span class="gray">code-complexity: -</span>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
