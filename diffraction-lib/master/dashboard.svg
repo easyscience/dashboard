@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="390" height="330" viewBox="0 0 390 330">
+  <rect width="100%" height="100%" fill="#f8f9fa"/>
+  <rect x="10" y="10" width="120" height="60" fill="#4CAF50" stroke="#333" stroke-width="2"/>
+  <rect x="135" y="10" width="120" height="60" fill="#2196F3" stroke="#333" stroke-width="2"/>
+  <rect x="260" y="10" width="120" height="60" fill="#FFC107" stroke="#333" stroke-width="2"/>
+  <text x="70" y="45" font-size="20" text-anchor="middle" fill="#fff">Cell 1</text>
+  <text x="195" y="45" font-size="20" text-anchor="middle" fill="#fff">Cell 2</text>
+  <text x="320" y="45" font-size="20" text-anchor="middle" fill="#333">Cell 3</text>
+  <!-- … (repeat for all 15 cells like before) … -->
+</svg>
