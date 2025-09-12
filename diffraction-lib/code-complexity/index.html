@@ -19,7 +19,7 @@
     }
     .card-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(20em, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(17em, 1fr));
       gap: 0;
       padding: 0;
       background-color: transparent;
@@ -30,21 +30,21 @@
       overflow: hidden;
       border: 1px solid #111;
       background-color: transparent;
-      margin: 0.5em;
+      margin: 0.75em;
       display: flex;
       flex-direction: column;
     }
-    .label {
+    .card-title {
       font-weight: 300;
       color: #ccc;
       display: flex;
       align-items: center;
-      gap: 0.5em;
+      gap: 0.75em;
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
       background-color: #202020;
-      padding: 0.7em .7em;
+      padding: 1em 1em;
       border-radius: 0;
       margin: 0;
       font-size: 1em;
@@ -54,14 +54,41 @@
       flex-direction: column;
       font-weight: 300;
       gap: 0.5em;
-      padding: 0.7em 0.7em;
+      padding: 1em 1em;
       background-color: #1a1a1a;
       border-top: 1px solid #101010;
       font-size: 1em;
     }
+    .values .row {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 1em;
+      min-width: 0;
+    }
+    .values .item-label {
+      color: #ccc;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      min-width: 0;
+    }
+    /* Allow label color classes to take effect over base label color */
+    .values .item-label.green { color: #6eb543; }
+    .values .item-label.yellow-green { color: #b4cd32; }
+    .values .item-label.yellow { color: #e8b745; }
+    .values .item-label.orange { color: #f39c12; }
+    .values .item-label.red { color: #e46259; }
+    .values .item-label.blue { color: #71b2f0; }
+    .values .item-label.gray { color: #757575; }
+    /* Icons inherit label color so they colorize accordingly */
+    .values .item-label .icon { color: currentColor; margin-right: 0.5em; }
+    .values .item-value {
+      white-space: nowrap;
+    }
     .values span img { vertical-align: middle; }
     .green { color: #6eb543; }
-    .yellow-green { color: #9acd32; }
+    .yellow-green { color: #b4cd32; }
     .yellow { color: #e8b745; }
     .orange { color: #f39c12; }
     .red { color: #e46259; }
